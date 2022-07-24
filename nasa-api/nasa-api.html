@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #4129cd;
+        color: white;
+    }
+        
+    
+</style>
+<body>
+
+</body>
+<script>
+    //using xmlhttp request
+    var apiKey = 'd8Mut3DvDLvJaqD1TFMikjUdr1enlhtR1tEjHTka';
+    var url = 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = function() {
+        if (this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+            var title = document.createElement('h1');
+            title.innerHTML = data.title;
+            document.body.appendChild(title);
+            
+            var img = document.createElement('img');
+            img.src = data.url;
+            
+                        var description = document.createElement('p');
+                        description.innerHTML = data.explanation;
+                        document.body.appendChild(description);
+
+            document.body.appendChild(img);
+        }
+    }
+    xhr.send();
+
+
+    //using fetch
+    var user='https://api.nasa.gov/techport/api/projects/17792?api_key='+apiKey;
+   function fetchData(){
+    fetch(user)
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data.project);
+        var title = document.createElement('h1');
+        title.innerHTML = data.project.title;
+        document.body.appendChild(title);
+
+        var proj=document.createElement('p');
+        proj.innerHTML=data.project.description;
+        document.body.appendChild(proj);
+           
+            
+        })
+   }
+    fetchData();
+</script>
+</html>

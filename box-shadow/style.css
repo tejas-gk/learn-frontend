@@ -1,0 +1,23 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background:linear-gradient(to right,#0ff,#006699);
+}
+.box{
+    width:30%;
+    /* max-width:600px; */
+    margin:auto;
+
+    /* border-radius:10px; */
+    padding:20px;
+    /* border:2px solid #000; */
+    box-shadow:
+    10px 10px #888888,
+    0px 10px #000,
+    20px 20px  #000,
+    30px 30px #000
+                ;
+}

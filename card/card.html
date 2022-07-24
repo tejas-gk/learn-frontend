@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<link rel="stylesheet" href="../buttons/button0/vutton.css">
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="card-conatiner">
+        <div class="card card-front">
+            <div class="card-header">
+                <div class="photo">
+                    <img src="https://pbs.twimg.com/profile_images/1533351518791155713/EmDXlotT_400x400.jpg" alt="">
+                </div>
+                <h3>Card Header</h3>
+            </div>
+            <div class="card-body">
+                <p>hello Im tejas</p>
+                <div class="btn">
+                    <button class="button btn btn2" data.number='2'>Connect</button>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa fa-google"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card card-back">
+           hello everyone
+        </div>
+    </div>
+</body>
+<script>
+    const frontCard=document.querySelector('.card-front');
+    const backCard=document.querySelector('.card-back');
+    const cardContainer=document.querySelector('.card-conatiner');
+
+    frontCard.addEventListener('click',function(){
+        cardContainer.classList.toggle('flip');
+    });
+    backCard.addEventListener('click',function(){
+        cardContainer.classList.toggle('flip');
+    });
+    
+</script>
+</html>
